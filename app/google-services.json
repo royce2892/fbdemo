@@ -1,0 +1,117 @@
+{
+  "project_info": {
+    "project_number": "298471891794",
+    "firebase_url": "https://accubits-9c5cc.firebaseio.com",
+    "project_id": "accubits-9c5cc",
+    "storage_bucket": "accubits-9c5cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298471891794:android:585459aa59a3c04f",
+        "android_client_info": {
+          "package_name": "app.com.hummingbird"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298471891794-pd8k86ant5i7f0upm0lg3enujni27vr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeM-njWHs9taEt0wNOFi7K7hkC9Y8H2Qk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298471891794:android:71f2a2ee094cfbf2",
+        "android_client_info": {
+          "package_name": "app.com.hummingbird2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298471891794-pd8k86ant5i7f0upm0lg3enujni27vr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeM-njWHs9taEt0wNOFi7K7hkC9Y8H2Qk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298471891794:android:bf4604b65a6d1a4e",
+        "android_client_info": {
+          "package_name": "com.accubits.firebasedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298471891794-rqf03ugvvuqndohllf0q8dukb28d3eq3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.accubits.firebasedemo",
+            "certificate_hash": "080c473918a8471b26aa611a6c018fb7142c936b"
+          }
+        },
+        {
+          "client_id": "298471891794-pd8k86ant5i7f0upm0lg3enujni27vr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeM-njWHs9taEt0wNOFi7K7hkC9Y8H2Qk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298471891794-pd8k86ant5i7f0upm0lg3enujni27vr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
