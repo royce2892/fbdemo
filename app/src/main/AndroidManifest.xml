@@ -23,6 +23,7 @@
 
         <activity android:name=".PhoneActivity" />
         <activity android:name=".RealtimeDb" />
+        <activity android:name=".StorageActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

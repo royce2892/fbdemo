@@ -85,6 +85,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         });
 
+
+        findViewById(R.id.storage).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,StorageActivity.class));
+            }
+        });
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
         FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
                 .setDeveloperModeEnabled(BuildConfig.DEBUG)
