@@ -29,6 +29,8 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     String TAG = "FBDEMO";
     CallbackManager mCallbackManager;
     Button mPhone;
+    FirebaseRemoteConfig mFirebaseRemoteConfig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,38 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             }
         });
 
+        findViewById(R.id.config).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                remoteConfig();
+            }
+        });
+
+        mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+        FirebaseRemoteConfigSettings configSettings = new FirebaseRemoteConfigSettings.Builder()
+                .setDeveloperModeEnabled(BuildConfig.DEBUG)
+                .build();
+        mFirebaseRemoteConfig.setConfigSettings(configSettings);
+
+        mFirebaseRemoteConfig.fetch(60 * 1000)
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Remote config fetch succeeded",
+                                    Toast.LENGTH_SHORT).show();
+
+                            // After config data is successfully fetched, it must be activated before newly fetched
+                            // values are returned.
+                            mFirebaseRemoteConfig.activateFetched();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Remote config fetch failed",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
         mAuth = FirebaseAuth.getInstance();
 
         mCallbackManager = CallbackManager.Factory.create();
@@ -101,6 +136,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         });
 
 
+    }
+
+    private void remoteConfig() {
+        String hol = mFirebaseRemoteConfig.getString("holiday");
+        Toast.makeText(this,"CONFIG HOLIDAY = "+hol,Toast.LENGTH_SHORT).show();
     }
 
     private void realtimeDb() {
